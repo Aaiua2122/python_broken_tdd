@@ -12,7 +12,6 @@ VAT_PERCENT = 20
 SHIPPING_KOPEKS = 49_000
 FREE_DELIVERY_FROM_KOPEKS = 500_000
 TIER_DISCOUNTS = ((10, 5), (25, 10), (50, 15))
-REQUIRED_LINE_KEYS = ("sku", "qty", "unit_price_kopecks")
 
 
 def validate_order(
