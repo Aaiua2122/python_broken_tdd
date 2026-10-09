@@ -29,13 +29,13 @@ def test_smoke_single_line_without_delivery() -> None:
 
 def test_empty_order_is_rejected() -> None:
     """Spec 3, rule 1: an order without lines cannot be processed."""
-    ...
-
+    result = validate_order([])
+    assert isinstance(result, str)
+    assert result != ""
 
 def test_empty_sku_is_rejected() -> None:
     """Spec 3, rule 2: a blank article code is not allowed."""
     ...
-
 
 def test_missing_line_key_is_rejected() -> None:
     """Spec 3, rule 3: every required key must be present."""
