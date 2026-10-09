@@ -42,8 +42,11 @@ def test_empty_sku_is_rejected() -> None:
 
 def test_missing_line_key_is_rejected() -> None:
     """Spec 3, rule 3: every required key must be present."""
-    ...
-
+    item = line()
+    del item["qty"]
+    result = validate_order([item])
+    assert isinstance(result, str)
+    assert result != ""
 
 def test_non_numeric_quantity_is_rejected() -> None:
     """Spec 3, rule 4: `qty` must be a whole number."""
