@@ -20,7 +20,9 @@ def validate_order(
     shipping_city: str = "",
 ) -> str | None:
     """Return a human readable reason why the order is invalid, or None if it is fine."""
-    ...
+    if not lines:
+        return "Order is empty"
+    return None
 
 
 def calculate_order_total(
